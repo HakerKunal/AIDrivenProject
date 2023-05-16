@@ -157,6 +157,8 @@ header {
 
 .prompt-box {
   margin-top: 50px;
+  margin-bottom: 200px;
+  height: 600px;
 }
 
 .option-box {
@@ -171,7 +173,7 @@ header {
   margin-top: 10px;
 }
 
-.sub-options button {
+.sub-options-buttons button {
   margin: 5px;
   padding: 10px 20px;
   background-color: #fff;
@@ -199,4 +201,54 @@ header {
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+.sub-options-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sub-options-buttons button {
+  margin-right: 10px;
+}
+
+.sub-options-content {
+  margin-top: 20px;
+}
+
+.option-box.pressed {
+  background-color: #7d3c98; /* Update with your desired color */
+  color: #ffffff; /* Update with your desired color */
+}
+
+.option-box button {
+  background-color: #5783db;
+}
+.option-box button:hover {
+  background-color: #7d3c98;
+}
+
+.sub-options-buttons button {
+  /* Add your default button styles here */
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.sub-option-button {
+  /* Add your default button styles here */
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.sub-option-button .active {
+  /* Add your styles for the selected button here */
+  background-color: #ff0000 !important;
+  color: #fff !important;
 }
