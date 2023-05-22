@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SubOptionsButton from "./SubOptionsButton";
 
 const AdditionalOptions = ({
   selectedOption,
   activeSubOption,
   onSubOptionClick,
+  setPdfUrl,
+  pdfUrl,
 }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const renderContent = () => {
     if (selectedOption === "Problem Identification") {
       return (
@@ -26,6 +30,9 @@ const AdditionalOptions = ({
           ]}
           activeOption={activeSubOption}
           onOptionClick={onSubOptionClick}
+          selectedOption={selectedOption}
+          setPdfUrl={setPdfUrl}
+          pdfUrl={pdfUrl}
         />
       );
     }
@@ -39,12 +46,32 @@ const AdditionalOptions = ({
                 label: "Assist in learning different prioritisation frameworks",
                 content: (
                   <p>
-                    I'm building a CRM for{" "}
-                    <input type="text" placeholder="insert text here" />. The
-                    product team uses the{" "}
-                    <select>
-                      <option value="MoSCoW method">MoSCoW method</option>
-                      <option value="KANO model">KANO model</option>
+                    I am a product manager, who wants to build a{" "}
+                    <input
+                      type="text"
+                      placeholder="App/Product name"
+                      style={{
+                        border: "2px solid purple",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "16px",
+                        color: "black",
+                      }}
+                    />
+                    . The My team uses the{" "}
+                    <select
+                      style={{
+                        border: "2px solid purple",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "16px",
+                        color: "black",
+                      }}
+                    >
+                      <option value="MoSCoW method">MoSCoW</option>
+                      <option value="KANO model">KANO</option>
                       <option value="Value vs. Complexity">
                         Value vs. Complexity
                       </option>
@@ -56,7 +83,13 @@ const AdditionalOptions = ({
                         Opportunity Prioritization
                       </option>
                     </select>{" "}
-                    to prioritize features.
+                    model to prioritise features.
+                    <br />
+                    <br />
+                    Please suggest examples of features that I should build for
+                    my MVP using the above prioritisation method. <br />
+                    <br />
+                    Tabulate this.
                   </p>
                 ),
               },
@@ -67,6 +100,9 @@ const AdditionalOptions = ({
             ]}
             activeOption={activeSubOption}
             onOptionClick={onSubOptionClick}
+            selectedOption={selectedOption}
+            setPdfUrl={setPdfUrl}
+            pdfUrl={pdfUrl}
           />
         </div>
       );
@@ -92,6 +128,9 @@ const AdditionalOptions = ({
             ]}
             activeOption={activeSubOption}
             onOptionClick={onSubOptionClick}
+            selectedOption={selectedOption}
+            setPdfUrl={setPdfUrl}
+            pdfUrl={pdfUrl}
           />
         </div>
       );
@@ -117,6 +156,9 @@ const AdditionalOptions = ({
             ]}
             activeOption={activeSubOption}
             onOptionClick={onSubOptionClick}
+            selectedOption={selectedOption}
+            setPdfUrl={setPdfUrl}
+            pdfUrl={pdfUrl}
           />
         </div>
       );

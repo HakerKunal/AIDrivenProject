@@ -1,33 +1,21 @@
 import React, { useState, useEffect } from "react";
 import OptionButton from "./OptionButton";
 import AdditionalOptions from "./AdditionalOptions";
-import { Document, Page } from "react-pdf";
-
-import kanoImg from "./kanoModel.png";
+import logo from "../images/productprompter-logo-zip-file/png/logo-no-background.png";
 
 const MainPage = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
   const images = [
     "https://media.licdn.com/dms/image/C5112AQHe-rQWyp9oAQ/article-cover_image-shrink_423_752/0/1520186101455?e=1689206400&v=beta&t=E96JMEwGw-oFa_0lGYiuwWUgi3YxZnCZP_VEgujIgFQ",
-    "https://emerj.com/wp-content/uploads/2020/02/The-AI-Product-Manager-A-Key-Role-for-the-Future-of-AI-Deployment-950x540-1-1-1045x594.jpg",
-    "https://symphonyindustrial.ai/digital-manufacturing/wp-content/uploads/sites/3/2021/10/Careers-Banner.jpg.webp",
   ];
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((currentImageIndex) =>
-        currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1
-      );
-    }, 3000);
-    return () => clearInterval(intervalId);
-  }, []);
   const [selectedOption, setSelectedOption] = useState(null);
   const [activeSubOption, setActiveSubOption] = useState(null);
+  const [pdfUrl, setPdfUrl] = useState(""); // State
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setActiveSubOption(null);
+    setPdfUrl("");
   };
 
   const handleSubOptionClick = (subOption) => {
@@ -36,20 +24,28 @@ const MainPage = () => {
 
   return (
     <div className="App">
+      <div class="matrix-text" id="matrixText"></div>
       <header className="header">
-        <h1 className="main-page__heading">YourHelpBot</h1>
+        <h1 className="main-page__heading">
+          <img src={logo} width={250} />
+        </h1>
         <div className="menu-icon">&#9776;</div>
       </header>
       <div className="image-banner">
         <img
-          src={images[currentImageIndex]}
+          src={
+            "https://media.licdn.com/dms/image/C5112AQHe-rQWyp9oAQ/article-cover_image-shrink_423_752/0/1520186101455?e=1689206400&v=beta&t=E96JMEwGw-oFa_0lGYiuwWUgi3YxZnCZP_VEgujIgFQ"
+          }
           alt="Banner"
           width={1000}
           height={400}
         />
       </div>
       <div className="prompt-box">
-        <p>Hi, in which field do you need help? For Product Management.</p>
+        <p className="prompt-text">
+          Hey there, I'm your dedicated PM companion, ready to help you conquer
+          new frontiers. Please choose the domain where you seek guidance.
+        </p>
         <div className="options-container">
           <div className="option-box">
             <OptionButton
@@ -96,6 +92,8 @@ const MainPage = () => {
               selectedOption={selectedOption}
               activeSubOption={activeSubOption}
               onSubOptionClick={handleSubOptionClick}
+              setPdfUrl={setPdfUrl}
+              pdfUrl={pdfUrl}
             />
           )}
         </div>
