@@ -51,7 +51,7 @@ const AdditionalOptions = ({
                       type="text"
                       placeholder="App/Product name"
                       style={{
-                        border: "2px solid purple",
+                        border: "2px solid #066a37",
                         borderRadius: "5px",
                         padding: "8px",
                         outline: "none",
@@ -62,7 +62,7 @@ const AdditionalOptions = ({
                     . The My team uses the{" "}
                     <select
                       style={{
-                        border: "2px solid purple",
+                        border: "2px solid #066a37",
                         borderRadius: "5px",
                         padding: "8px",
                         outline: "none",

@@ -3,6 +3,8 @@ import OptionButton from "./OptionButton";
 import AdditionalOptions from "./AdditionalOptions";
 import logo from "../images/productprompter-logo-zip-file/png/logo-no-background.png";
 
+import banner from "../images/pic4.jpg";
+
 const MainPage = () => {
   const images = [
     "https://media.licdn.com/dms/image/C5112AQHe-rQWyp9oAQ/article-cover_image-shrink_423_752/0/1520186101455?e=1689206400&v=beta&t=E96JMEwGw-oFa_0lGYiuwWUgi3YxZnCZP_VEgujIgFQ",
@@ -32,19 +34,14 @@ const MainPage = () => {
         <div className="menu-icon">&#9776;</div>
       </header>
       <div className="image-banner">
-        <img
-          src={
-            "https://media.licdn.com/dms/image/C5112AQHe-rQWyp9oAQ/article-cover_image-shrink_423_752/0/1520186101455?e=1689206400&v=beta&t=E96JMEwGw-oFa_0lGYiuwWUgi3YxZnCZP_VEgujIgFQ"
-          }
-          alt="Banner"
-          width={1000}
-          height={400}
-        />
+        {/* <img src={banner} alt="Banner" width={1000} height={500} /> */}
       </div>
       <div className="prompt-box">
         <p className="prompt-text">
-          Hey there, I'm your dedicated PM companion, ready to help you conquer
-          new frontiers. Please choose the domain where you seek guidance.
+          Hey there, <br />
+          I'm your personal PM assistant{" "}
+          <span style={{ fontSize:"30px" }}>🤖</span>. Please
+          choose the field where you need guidance.
         </p>
         <div className="options-container">
           <div className="option-box">

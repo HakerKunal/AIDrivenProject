@@ -45,7 +45,7 @@ const SubOptionsButton = ({
             style={{
               backgroundColor:
                 activeOption && activeOption.label === option.label
-                  ? "#d5c5db"
+                  ? "#d6ede4"
                   : "#e0e0e0",
               color:
                 activeOption && activeOption.label === option.label

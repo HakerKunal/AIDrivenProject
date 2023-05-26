@@ -24,7 +24,7 @@
 .main {
   position: relative;
   width: 100%;
-  background-image: url('./images/7672043.jpg');
+  background-image: url("./images/pic3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -139,7 +139,7 @@ header {
   font-size: 16px;
   border: none;
   border-radius: 4px;
-  background-color: #8e44ad;
+  background-color: #8ee709;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
@@ -244,15 +244,15 @@ header {
 }
 
 .option-box.pressed {
-  background-color: #7d3c98; /* Update with your desired color */
+  background-color: #6fbfa0; /* Update with your desired color */
   color: #ffffff; /* Update with your desired color */
 }
 
 .option-box button {
-  background-color: #5783db;
+  background-color: black;
 }
 .option-box button:hover {
-  background-color: #7d3c98;
+  background-color: #6fbfa0;
 }
 
 .sub-options-buttons button {
@@ -288,7 +288,7 @@ header {
   padding: 16px;
   margin-top: 50px;
   min-height: 100px;
-  width:80vw;
+  width: 80vw;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .prompt-text {
