@@ -64,8 +64,11 @@ header {
 }
 
 .main-page__heading {
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-left: 10px;
   color: #fff;
+  font-family: "Roboto Regular", Arial, sans-serif;
 }
 
 .main-page__menu-icon {
@@ -103,22 +106,6 @@ header {
   margin-top: 20px;
 }
 
-.option-box button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  background-color: #8e44ad;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.option-box button:hover {
-  background-color: #7d3c98;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -135,7 +122,7 @@ header {
 
 .option-box button {
   margin: 10px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-size: 16px;
   border: none;
   border-radius: 4px;
@@ -240,7 +227,7 @@ header {
 }
 
 .sub-options-content {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .option-box.pressed {
@@ -285,10 +272,11 @@ header {
   font-family: "Roboto Regular", Arial, sans-serif;
   text-align: left;
   border-radius: 8px;
-  padding: 16px;
+  padding: 10px;
   margin-top: 50px;
-  min-height: 100px;
+  min-height: 80px;
   width: 80vw;
+  font-size: 16px !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .prompt-text {
@@ -342,5 +330,40 @@ header {
   }
   100% {
     border-width: 5px;
+  }
+}
+P {
+  font-size: 12px;
+}
+.typewriter h1 {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typewriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 5.5s steps(40) infinite, blink-caret 0.5s step-end infinite;
+
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 105%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
   }
 }

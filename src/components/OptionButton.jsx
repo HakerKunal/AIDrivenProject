@@ -8,6 +8,7 @@ const OptionButton = ({ option, onClick, selectedOption }) => {
   return (
     <button
       className={`option-box ${selectedOption === option ? "pressed" : ""}`}
+      style={{ width: "250px" }}
       onClick={handleClick}
     >
       {option}

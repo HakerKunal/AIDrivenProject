@@ -9,23 +9,139 @@ const AdditionalOptions = ({
   pdfUrl,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const initalSentence = (
+    <p style={{ textAlign: "center", fontSize: "18px" }}>
+      I am a product manager building{" "}
+      <input
+        type="text"
+        placeholder="Enter product name"
+        style={{
+          border: "2px solid #066a37",
+          borderRadius: "5px",
+          padding: "8px",
+          outline: "none",
+          fontSize: "12px",
+          color: "black",
+        }}
+      />
+      .
+    </p>
+  );
 
   const renderContent = () => {
-    if (selectedOption === "Problem Identification") {
+    if (selectedOption === "Product Strategy") {
       return (
         <SubOptionsButton
           options={[
             {
-              label: "Data analysis",
-              content: <p>Content for Data analysis button</p>,
+              label: "Market research and analysis",
+              content: (
+                <p style={{ textAlign: "center", fontSize: "18px" }}>
+                  I am a product manager building{" "}
+                  <input
+                    type="text"
+                    placeholder="Enter product name"
+                    style={{
+                      border: "2px solid #066a37",
+                      borderRadius: "5px",
+                      padding: "8px",
+                      outline: "none",
+                      fontSize: "12px",
+                      color: "black",
+                    }}
+                  />
+                  . What are the current market trends and opportunities for
+                  this product?
+                </p>
+              ),
             },
             {
-              label: "Market research",
-              content: <p>Content for Market research button</p>,
+              label: "Competitive analysis",
+              content: (
+                <p style={{ textAlign: "center", fontSize: "18px" }}>
+                  I am a product manager building{" "}
+                  <input
+                    type="text"
+                    placeholder="Enter product name"
+                    style={{
+                      border: "2px solid #066a37",
+                      borderRadius: "5px",
+                      padding: "8px",
+                      outline: "none",
+                      fontSize: "12px",
+                      color: "black",
+                    }}
+                  />
+                  . Who are our main competitiors,and what are their strengths
+                  and weeknesses?
+                </p>
+              ),
             },
             {
-              label: "User Feedback",
-              content: <p>Content for User Feedback button</p>,
+              label: "Customer segmentation and targeting",
+              content: (
+                <p style={{ textAlign: "center", fontSize: "18px" }}>
+                  I am a product manager building{" "}
+                  <input
+                    type="text"
+                    placeholder="Enter product name"
+                    style={{
+                      border: "2px solid #066a37",
+                      borderRadius: "5px",
+                      padding: "8px",
+                      outline: "none",
+                      fontSize: "12px",
+                      color: "black",
+                    }}
+                  />
+                  . Who are our target customers, and what are their needs and
+                  pain points?
+                </p>
+              ),
+            },
+            {
+              label: "Product vision and goals",
+              content: (
+                <p style={{ textAlign: "center", fontSize: "18px" }}>
+                  I am a product manager building{" "}
+                  <input
+                    type="text"
+                    placeholder="Enter product name"
+                    style={{
+                      border: "2px solid #066a37",
+                      borderRadius: "5px",
+                      padding: "8px",
+                      outline: "none",
+                      fontSize: "12px",
+                      color: "black",
+                    }}
+                  />
+                  . What is our long-term vision for the product, and what goals
+                  do we want to achieve?
+                </p>
+              ),
+            },
+            {
+              label: "Establishing product-market fit",
+              content: (
+                <p style={{ textAlign: "center", fontSize: "18px" }}>
+                  I am a product manager building{" "}
+                  <input
+                    type="text"
+                    placeholder="Enter product name"
+                    style={{
+                      border: "2px solid #066a37",
+                      borderRadius: "5px",
+                      padding: "8px",
+                      outline: "none",
+                      fontSize: "12px",
+                      color: "black",
+                    }}
+                  />
+                  . How does our product meet the needs of the target market
+                  better than competitors?
+                </p>
+              ),
             },
           ]}
           activeOption={activeSubOption}
@@ -37,15 +153,15 @@ const AdditionalOptions = ({
       );
     }
 
-    if (selectedOption === "Prioritization") {
+    if (selectedOption === "Product Planning") {
       return (
         <div className="sub-options-buttons">
           <SubOptionsButton
             options={[
               {
-                label: "Assist in learning different prioritisation frameworks",
+                label: "Feature identification and prioritization",
                 content: (
-                  <p>
+                  <p style={{ fontSize: "18px" }}>
                     I am a product manager, who wants to build a{" "}
                     <input
                       type="text"
@@ -94,8 +210,92 @@ const AdditionalOptions = ({
                 ),
               },
               {
-                label: "Assist on prioritisation on basis of listed features",
-                content: <p>Content for Assist on prioritisation button</p>,
+                label: "Requirnments gathering",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . What are the specific functional and non-functional
+                    requirnments of the product?
+                  </p>
+                ),
+              },
+              {
+                label: "Release planning and scheduling",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . What is the timeline for delivering product increments and
+                    achieving milestones?
+                  </p>
+                ),
+              },
+              {
+                label: "Resource estimation and allocation",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . What resources (budget, manpower, technology) are required
+                    for successful product development?
+                  </p>
+                ),
+              },
+              {
+                label: "Stakeholder collaboration",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . Which stakeholders should be involved, and how can we
+                    collaborote effectively with them?
+                  </p>
+                ),
               },
             ]}
             activeOption={activeSubOption}
@@ -108,22 +308,120 @@ const AdditionalOptions = ({
       );
     }
 
-    if (selectedOption === "Research Phase") {
+    if (selectedOption === "Product Development") {
       return (
         <div className="sub-options-buttons">
           <SubOptionsButton
             options={[
               {
-                label: "Competitive analysis",
-                content: <p>Content for Competitive analysis button</p>,
+                label: "Agile or Waterfall development methodology",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . Which development approach is best suited for the nature
+                    of the product and its requirements?
+                  </p>
+                ),
               },
               {
-                label: "User research",
-                content: <p>Content for User research button</p>,
+                label: "Development sprints and iterations",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . How can we break down the product development into smaller
+                    iterations for incremental progress?
+                  </p>
+                ),
               },
               {
-                label: "Ideation",
-                content: <p>Content for Ideation button</p>,
+                label: "Quality assurance and testing",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . What quality standards and testing processes should be
+                    implemented to ensure a robust and reliable product?
+                  </p>
+                ),
+              },
+              {
+                label: "Feedback and iteration loops",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . How can we gather user feedback and incorporate it into
+                    the development process for continuous imporvement?
+                  </p>
+                ),
+              },
+              {
+                label: "Integration with other systems or platforms",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . What integrations with external systems or platforms are
+                    necessary to enhance the product's functionality?
+                  </p>
+                ),
               },
             ]}
             activeOption={activeSubOption}
@@ -136,22 +434,289 @@ const AdditionalOptions = ({
       );
     }
 
-    if (selectedOption === "Product Ideation") {
+    if (selectedOption === "Product Launch") {
       return (
         <div className="sub-options-buttons">
           <SubOptionsButton
             options={[
               {
-                label: "Expand Product Lines",
-                content: <p>Content for Expand Product Lines button</p>,
+                label: "Marketing messaging and positioning",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . What unique value propositions and messages should be
+                    communicated to our target customers?
+                  </p>
+                ),
               },
               {
-                label: "Aid Product Ideation",
-                content: <p>Content for Aid Product Ideation button</p>,
+                label: "Pricing and packaging strategies",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . What pricing model and packaging options will resonate
+                    with our target customers and align with our goals?
+                  </p>
+                ),
               },
               {
-                label: "Ideation",
-                content: <p>Content for Ideation button</p>,
+                label: "Sales enablement and training",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . How can we equip our sales teams with the knowledge and
+                    tools to effectively sell the product?
+                  </p>
+                ),
+              },
+              {
+                label: "Collateral creation (e.g. website, brochures)",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . What marketing collateral (website, brochures, demos) do
+                    we need to create to support the launch?
+                  </p>
+                ),
+              },
+              {
+                label: "Go-to-market execution and coordination",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . How can we coordinate cross-functional efforts to ensure a
+                    smooth and successful product launch?
+                  </p>
+                ),
+              },
+            ]}
+            activeOption={activeSubOption}
+            onOptionClick={onSubOptionClick}
+            selectedOption={selectedOption}
+            setPdfUrl={setPdfUrl}
+            pdfUrl={pdfUrl}
+          />
+        </div>
+      );
+    }
+    if (selectedOption === "Product Lifecycle Management") {
+      return (
+        <div className="sub-options-buttons">
+          <SubOptionsButton
+            options={[
+              {
+                label: "Performance monitoring and analytics",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . What metrics and KPIs should be tracked to evaluate the
+                    products's performance and success?
+                  </p>
+                ),
+              },
+              {
+                label: "Customer feedback collection and analysis",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . How can we gather feedback from customers to understand
+                    their satisfaction,needs, and areas for improvement?
+                  </p>
+                ),
+              },
+              {
+                label: "Data-driven decision-making",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . How can we leverage data and insights to make informed
+                    decisions about product enchancements or changes?
+                  </p>
+                ),
+              },
+              {
+                label: "Product updates, enchancements, and bug fixes",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . What updates, enchancements, or bug fixes should be
+                    priortized based on user feedback and market demands?
+                  </p>
+                ),
+              },
+              {
+                label: "Versioning and release management",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . How should we manage product versions and releases to
+                    ensure proper version control and customer communication?
+                  </p>
+                ),
+              },
+              {
+                label: "Competitive monitoring and analysis",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . What are our competitors doing, and how can we proactively
+                    respond to market changes and stay ahead?
+                  </p>
+                ),
+              },
+              {
+                label: "Sunsetting or retiring the product",
+                content: (
+                  <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    I am a product manager building{" "}
+                    <input
+                      type="text"
+                      placeholder="Enter product name"
+                      style={{
+                        border: "2px solid #066a37",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        outline: "none",
+                        fontSize: "12px",
+                        color: "black",
+                      }}
+                    />
+                    . When and how should we retire a product that no longer
+                    meets business objectives or customer needs?
+                  </p>
+                ),
               },
             ]}
             activeOption={activeSubOption}
