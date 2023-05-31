@@ -124,7 +124,30 @@ const SubOptionsButton = ({
           </div>
         </div>
       )}
-      {activeOption && zoomedItem !== "" && (
+      {activeOption && activeOption.content.length === 1 && (
+        <button
+          onClick={handleSubmit}
+          style={{
+            width: "200px",
+            height: "50px",
+            border: "none",
+            outline: "none",
+            background: "#2f2f2f",
+            color: "#fff",
+            fontSize: "22px",
+            borderRadius: "40px",
+            textAlign: "center",
+            boxShadow: "0 6px 20px -5px rgba(0,0,0,0.4)",
+            position: "relative",
+            overflow: "hidden",
+            cursor: "pointer",
+            marginTop: "40px",
+          }}
+        >
+          Submit
+        </button>
+      )}
+      {activeOption && activeOption.content.length > 1 && zoomedItem !== "" && (
         <button
           onClick={handleSubmit}
           style={{
