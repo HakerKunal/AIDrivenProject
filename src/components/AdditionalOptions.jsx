@@ -171,7 +171,7 @@ const AdditionalOptions = ({
                         borderRadius: "5px",
                         padding: "8px",
                         outline: "none",
-                        fontSize: "16px",
+                        fontSize: "12px",
                         color: "black",
                       }}
                     />
@@ -182,7 +182,7 @@ const AdditionalOptions = ({
                         borderRadius: "5px",
                         padding: "8px",
                         outline: "none",
-                        fontSize: "16px",
+                        fontSize: "12px",
                         color: "black",
                       }}
                     >
@@ -210,7 +210,7 @@ const AdditionalOptions = ({
                 ),
               },
               {
-                label: "Requirnments gathering",
+                label: "Requirements gathering",
                 content: (
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}

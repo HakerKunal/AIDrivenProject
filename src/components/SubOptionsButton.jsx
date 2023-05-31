@@ -22,9 +22,7 @@ const SubOptionsButton = ({
 
   const handleSubmit = () => {
     setPdfUrl("");
-    if (
-      selectOption === "Assist in learning different prioritisation frameworks"
-    ) {
+    if (selectOption === "Feature identification and prioritization") {
       setPdfUrl(priorPdf); // Set the PDF URL to the desired PDF file
     }
   };
