@@ -11,18 +11,28 @@ const SubOptionsButton = ({
   setPdfUrl,
   pdfUrl,
 }) => {
-  const [submittedContent, setSubmittedContent] = useState(null);
+  const [zoomedItem, setZoomedItem] = useState("");
+
+  const handleItemClick = (item) => {
+    setPdfUrl("");
+    setZoomedItem(item);
+  };
+
   const [selectOption, setSelectOption] = useState("");
 
   const handleButtonClick = (option) => {
     setPdfUrl("");
     onOptionClick(option);
     setSelectOption(option.label);
+    setZoomedItem("");
   };
 
   const handleSubmit = () => {
     setPdfUrl("");
-    if (selectOption === "Feature identification and prioritization") {
+    if (
+      zoomedItem.label ===
+      "Assist in learning different prioritization frameworks"
+    ) {
       setPdfUrl(priorPdf); // Set the PDF URL to the desired PDF file
     }
   };
@@ -59,10 +69,62 @@ const SubOptionsButton = ({
           </button>
         ))}
       </div>
-      {activeOption && (
-        <div className="sub-options-content">{activeOption.content}</div>
+      {activeOption && activeOption.content.length > 1 && zoomedItem === "" && (
+        <div
+          className="sub-options-content1"
+          style={{
+            marginTop: "40px",
+            paddingTop: "40px",
+            paddingBottom: "40px",
+          }}
+        >
+          {activeOption.content.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => handleItemClick(item)}
+              className="content-item"
+            >
+              <div
+                className="label-option"
+                style={{
+                  position: "relative",
+                  bottom: "31px",
+                  right: "10px",
+                }}
+              >
+                {item.label}
+              </div>
+              <div>{item.content}</div>
+            </div>
+          ))}
+        </div>
       )}
-      {activeOption && (
+      {activeOption && activeOption.content.length === 1 && (
+        <div className="sub-options-content">
+          <div>{activeOption.content[0]}</div>
+        </div>
+      )}
+      {zoomedItem && (
+        <div
+          // style={{ display: "flex", flexDirection: "column" }}
+          className="content-item2"
+        >
+          <div
+            className="label-option"
+            style={{
+              position: "relative",
+              bottom: "31px",
+              right: "10px",
+            }}
+          >
+            {zoomedItem.label}
+          </div>
+          <div>
+            <div>{zoomedItem.content}</div>
+          </div>
+        </div>
+      )}
+      {activeOption && zoomedItem !== "" && (
         <button
           onClick={handleSubmit}
           style={{
@@ -94,9 +156,8 @@ const SubOptionsButton = ({
             height: "800px",
             position: "relative",
             marginTop: "20px",
-
             border: "none",
-            boxShadow: "0 0 10px 1px purple",
+            boxShadow: "0 0 10px 1px green",
             animation: "borderFlow 2s infinite alternate",
           }}
         ></iframe>

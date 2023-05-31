@@ -9,6 +9,7 @@ const AdditionalOptions = ({
   pdfUrl,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
+
   const initalSentence = (
     <p style={{ textAlign: "center", fontSize: "18px" }}>
       I am a product manager building{" "}
@@ -35,7 +36,7 @@ const AdditionalOptions = ({
           options={[
             {
               label: "Market research and analysis",
-              content: (
+              content: [
                 <p style={{ textAlign: "center", fontSize: "18px" }}>
                   I am a product manager building{" "}
                   <input
@@ -52,12 +53,12 @@ const AdditionalOptions = ({
                   />
                   . What are the current market trends and opportunities for
                   this product?
-                </p>
-              ),
+                </p>,
+              ],
             },
             {
               label: "Competitive analysis",
-              content: (
+              content: [
                 <p style={{ textAlign: "center", fontSize: "18px" }}>
                   I am a product manager building{" "}
                   <input
@@ -74,12 +75,12 @@ const AdditionalOptions = ({
                   />
                   . Who are our main competitiors,and what are their strengths
                   and weeknesses?
-                </p>
-              ),
+                </p>,
+              ],
             },
             {
               label: "Customer segmentation and targeting",
-              content: (
+              content: [
                 <p style={{ textAlign: "center", fontSize: "18px" }}>
                   I am a product manager building{" "}
                   <input
@@ -96,12 +97,12 @@ const AdditionalOptions = ({
                   />
                   . Who are our target customers, and what are their needs and
                   pain points?
-                </p>
-              ),
+                </p>,
+              ],
             },
             {
               label: "Product vision and goals",
-              content: (
+              content: [
                 <p style={{ textAlign: "center", fontSize: "18px" }}>
                   I am a product manager building{" "}
                   <input
@@ -118,12 +119,12 @@ const AdditionalOptions = ({
                   />
                   . What is our long-term vision for the product, and what goals
                   do we want to achieve?
-                </p>
-              ),
+                </p>,
+              ],
             },
             {
               label: "Establishing product-market fit",
-              content: (
+              content: [
                 <p style={{ textAlign: "center", fontSize: "18px" }}>
                   I am a product manager building{" "}
                   <input
@@ -140,8 +141,8 @@ const AdditionalOptions = ({
                   />
                   . How does our product meet the needs of the target market
                   better than competitors?
-                </p>
-              ),
+                </p>,
+              ],
             },
           ]}
           activeOption={activeSubOption}
@@ -160,58 +161,87 @@ const AdditionalOptions = ({
             options={[
               {
                 label: "Feature identification and prioritization",
-                content: (
-                  <p style={{ fontSize: "18px" }}>
-                    I am a product manager, who wants to build a{" "}
-                    <input
-                      type="text"
-                      placeholder="App/Product name"
-                      style={{
-                        border: "2px solid #066a37",
-                        borderRadius: "5px",
-                        padding: "8px",
-                        outline: "none",
-                        fontSize: "12px",
-                        color: "black",
-                      }}
-                    />
-                    . The My team uses the{" "}
-                    <select
-                      style={{
-                        border: "2px solid #066a37",
-                        borderRadius: "5px",
-                        padding: "8px",
-                        outline: "none",
-                        fontSize: "12px",
-                        color: "black",
-                      }}
-                    >
-                      <option value="MoSCoW method">MoSCoW</option>
-                      <option value="KANO model">KANO</option>
-                      <option value="Value vs. Complexity">
-                        Value vs. Complexity
-                      </option>
-                      <option value="Bubble Sort">Bubble Sort</option>
-                      <option value="Numerical Assignment">
-                        Numerical Assignment
-                      </option>
-                      <option value="Opportunity Prioritization">
-                        Opportunity Prioritization
-                      </option>
-                    </select>{" "}
-                    model to prioritise features.
-                    <br />
-                    <br />
-                    Please suggest examples of features that I should build for
-                    my MVP using the above prioritisation method. <br />
-                    <br />
-                    Tabulate this.
-                  </p>
-                ),
+                content: [
+                  {
+                    label:
+                      "Assist in learning different prioritization frameworks",
+                    content: (
+                      <div>
+                        I am a product manager, who wants to build a{" "}
+                        <input
+                          type="text"
+                          placeholder="App/Product name"
+                          style={{
+                            border: "2px solid #066a37",
+                            borderRadius: "5px",
+                            padding: "8px",
+                            outline: "none",
+                            fontSize: "12px",
+                            color: "black",
+                          }}
+                        />
+                        . The My team uses the{" "}
+                        <select
+                          style={{
+                            border: "2px solid #066a37",
+                            borderRadius: "5px",
+                            padding: "8px",
+                            outline: "none",
+                            fontSize: "12px",
+                            color: "black",
+                          }}
+                        >
+                          <option value="MoSCoW method">MoSCoW</option>
+                          <option value="KANO model">KANO</option>
+                          <option value="Value vs. Complexity">
+                            Value vs. Complexity
+                          </option>
+                          <option value="Bubble Sort">Bubble Sort</option>
+                          <option value="Numerical Assignment">
+                            Numerical Assignment
+                          </option>
+                          <option value="Opportunity Prioritization">
+                            Opportunity Prioritization
+                          </option>
+                        </select>{" "}
+                        model to prioritise features.
+                        <br />
+                        <br />
+                        Please suggest examples of features that I should build
+                        for my MVP using the above prioritisation method. <br />
+                        <br />
+                        Tabulate this.
+                      </div>
+                    ),
+                  },
+                  {
+                    label: "Assist on feature prioritization",
+                    content: (
+                      <div style={{ textAlign: "left" }}>
+                        I am a product manager building{" "}
+                        <input
+                          type="text"
+                          placeholder="Enter product name"
+                          style={{
+                            border: "2px solid #066a37",
+                            borderRadius: "5px",
+                            padding: "8px",
+                            outline: "none",
+                            fontSize: "12px",
+                            color: "black",
+                          }}
+                        />
+                        . Can you provide insights on effective methods or
+                        frameworks to prioritize features based on their impact,
+                        feasibility, and alignment with strategic goals?
+                      </div>
+                    ),
+                  },
+                ],
               },
               {
                 label: "Requirements gathering",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -228,12 +258,12 @@ const AdditionalOptions = ({
                     />
                     . What are the specific functional and non-functional
                     requirnments of the product?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Release planning and scheduling",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -250,12 +280,12 @@ const AdditionalOptions = ({
                     />
                     . What is the timeline for delivering product increments and
                     achieving milestones?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Resource estimation and allocation",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -272,12 +302,12 @@ const AdditionalOptions = ({
                     />
                     . What resources (budget, manpower, technology) are required
                     for successful product development?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Stakeholder collaboration",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -294,8 +324,8 @@ const AdditionalOptions = ({
                     />
                     . Which stakeholders should be involved, and how can we
                     collaborote effectively with them?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
             ]}
             activeOption={activeSubOption}
@@ -315,7 +345,7 @@ const AdditionalOptions = ({
             options={[
               {
                 label: "Agile or Waterfall development methodology",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -332,12 +362,12 @@ const AdditionalOptions = ({
                     />
                     . Which development approach is best suited for the nature
                     of the product and its requirements?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Development sprints and iterations",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -354,12 +384,12 @@ const AdditionalOptions = ({
                     />
                     . How can we break down the product development into smaller
                     iterations for incremental progress?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Quality assurance and testing",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -376,12 +406,12 @@ const AdditionalOptions = ({
                     />
                     . What quality standards and testing processes should be
                     implemented to ensure a robust and reliable product?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Feedback and iteration loops",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -398,12 +428,12 @@ const AdditionalOptions = ({
                     />
                     . How can we gather user feedback and incorporate it into
                     the development process for continuous imporvement?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Integration with other systems or platforms",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -420,8 +450,8 @@ const AdditionalOptions = ({
                     />
                     . What integrations with external systems or platforms are
                     necessary to enhance the product's functionality?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
             ]}
             activeOption={activeSubOption}
@@ -441,7 +471,7 @@ const AdditionalOptions = ({
             options={[
               {
                 label: "Marketing messaging and positioning",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -458,12 +488,12 @@ const AdditionalOptions = ({
                     />
                     . What unique value propositions and messages should be
                     communicated to our target customers?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Pricing and packaging strategies",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -480,12 +510,12 @@ const AdditionalOptions = ({
                     />
                     . What pricing model and packaging options will resonate
                     with our target customers and align with our goals?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Sales enablement and training",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -502,12 +532,12 @@ const AdditionalOptions = ({
                     />
                     . How can we equip our sales teams with the knowledge and
                     tools to effectively sell the product?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Collateral creation (e.g. website, brochures)",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -524,12 +554,12 @@ const AdditionalOptions = ({
                     />
                     . What marketing collateral (website, brochures, demos) do
                     we need to create to support the launch?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Go-to-market execution and coordination",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -546,8 +576,8 @@ const AdditionalOptions = ({
                     />
                     . How can we coordinate cross-functional efforts to ensure a
                     smooth and successful product launch?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
             ]}
             activeOption={activeSubOption}
@@ -566,7 +596,7 @@ const AdditionalOptions = ({
             options={[
               {
                 label: "Performance monitoring and analytics",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -583,12 +613,12 @@ const AdditionalOptions = ({
                     />
                     . What metrics and KPIs should be tracked to evaluate the
                     products's performance and success?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Customer feedback collection and analysis",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -605,12 +635,12 @@ const AdditionalOptions = ({
                     />
                     . How can we gather feedback from customers to understand
                     their satisfaction,needs, and areas for improvement?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Data-driven decision-making",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -627,12 +657,12 @@ const AdditionalOptions = ({
                     />
                     . How can we leverage data and insights to make informed
                     decisions about product enchancements or changes?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Product updates, enchancements, and bug fixes",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -649,12 +679,12 @@ const AdditionalOptions = ({
                     />
                     . What updates, enchancements, or bug fixes should be
                     priortized based on user feedback and market demands?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Versioning and release management",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -671,12 +701,12 @@ const AdditionalOptions = ({
                     />
                     . How should we manage product versions and releases to
                     ensure proper version control and customer communication?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Competitive monitoring and analysis",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -693,12 +723,12 @@ const AdditionalOptions = ({
                     />
                     . What are our competitors doing, and how can we proactively
                     respond to market changes and stay ahead?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
               {
                 label: "Sunsetting or retiring the product",
-                content: (
+                content: [
                   <p style={{ textAlign: "center", fontSize: "18px" }}>
                     I am a product manager building{" "}
                     <input
@@ -715,8 +745,8 @@ const AdditionalOptions = ({
                     />
                     . When and how should we retire a product that no longer
                     meets business objectives or customer needs?
-                  </p>
-                ),
+                  </p>,
+                ],
               },
             ]}
             activeOption={activeSubOption}
