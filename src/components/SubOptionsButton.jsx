@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import { Document, Page } from "react-pdf";
-import sampleFile from "../sample.pdf";
 import priorPdf from "../pdfs/Prompts for Product Managers-48.pdf";
 
 const SubOptionsButton = ({
   options,
   activeOption,
   onOptionClick,
-  selectedOption,
   setPdfUrl,
   pdfUrl,
 }) => {
@@ -71,7 +68,7 @@ const SubOptionsButton = ({
       </div>
       {activeOption && activeOption.content.length > 1 && zoomedItem === "" && (
         <div
-          className="sub-options-content1"
+          className="sub-options-content1 zoom-out-two-animation"
           style={{
             marginTop: "40px",
             paddingTop: "40px",
@@ -82,7 +79,9 @@ const SubOptionsButton = ({
             <div
               key={index}
               onClick={() => handleItemClick(item)}
-              className="content-item"
+              className={`content-item  ${
+                zoomedItem === item ? "zoom-out-animation" : ""
+              }`}
             >
               <div
                 className="label-option"
@@ -94,33 +93,49 @@ const SubOptionsButton = ({
               >
                 {item.label}
               </div>
-              <div>{item.content}</div>
+              <div>{item.disabledContent}</div>
             </div>
           ))}
         </div>
       )}
       {activeOption && activeOption.content.length === 1 && (
-        <div className="sub-options-content">
+        <div className="sub-options-content ">
           <div>{activeOption.content[0]}</div>
         </div>
       )}
       {zoomedItem && (
-        <div
-          // style={{ display: "flex", flexDirection: "column" }}
-          className="content-item2"
-        >
+        <div style={{ position: "relative" }} className="zoom-in-animation">
           <div
-            className="label-option"
-            style={{
-              position: "relative",
-              bottom: "31px",
-              right: "10px",
-            }}
+            className="back-button"
+            style={{ position: "absolute", top: 20, right: 0 }}
           >
-            {zoomedItem.label}
+            <a
+              className="label"
+              onClick={() => {
+                setPdfUrl("");
+                setZoomedItem("");
+              }}
+            >
+              back
+            </a>
           </div>
-          <div>
-            <div>{zoomedItem.content}</div>
+          <div
+            // style={{ display: "flex", flexDirection: "column" }}
+            className="content-item2"
+          >
+            <div
+              className="label-option"
+              style={{
+                position: "relative",
+                bottom: "31px",
+                right: "10px",
+              }}
+            >
+              {zoomedItem.label}
+            </div>
+            <div>
+              <div>{zoomedItem.content}</div>
+            </div>
           </div>
         </div>
       )}
@@ -150,6 +165,7 @@ const SubOptionsButton = ({
       {activeOption && activeOption.content.length > 1 && zoomedItem !== "" && (
         <button
           onClick={handleSubmit}
+          className="zoom-in-animation"
           style={{
             width: "200px",
             height: "50px",

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SubOptionsButton from "./SubOptionsButton";
+
 
 const AdditionalOptions = ({
   selectedOption,
@@ -8,7 +9,6 @@ const AdditionalOptions = ({
   setPdfUrl,
   pdfUrl,
 }) => {
-  const [isLoading, setIsLoading] = useState(false);
 
   const initalSentence = (
     <p style={{ textAlign: "center", fontSize: "18px" }}>
@@ -213,6 +213,56 @@ const AdditionalOptions = ({
                         Tabulate this.
                       </div>
                     ),
+                    disabledContent: (
+                      <div>
+                        I am a product manager, who wants to build a{" "}
+                        <input
+                          type="text"
+                          placeholder="App/Product name"
+                          disabled
+                          style={{
+                            border: "2px solid #066a37",
+                            borderRadius: "5px",
+                            padding: "8px",
+                            outline: "none",
+                            fontSize: "12px",
+                            color: "black",
+                          }}
+                        />
+                        . The My team uses the{" "}
+                        <select
+                          style={{
+                            border: "2px solid #066a37",
+                            borderRadius: "5px",
+                            padding: "8px",
+                            outline: "none",
+                            fontSize: "12px",
+                            color: "black",
+                          }}
+                          disabled
+                        >
+                          <option value="MoSCoW method">MoSCoW</option>
+                          <option value="KANO model">KANO</option>
+                          <option value="Value vs. Complexity">
+                            Value vs. Complexity
+                          </option>
+                          <option value="Bubble Sort">Bubble Sort</option>
+                          <option value="Numerical Assignment">
+                            Numerical Assignment
+                          </option>
+                          <option value="Opportunity Prioritization">
+                            Opportunity Prioritization
+                          </option>
+                        </select>{" "}
+                        model to prioritise features.
+                        <br />
+                        <br />
+                        Please suggest examples of features that I should build
+                        for my MVP using the above prioritisation method. <br />
+                        <br />
+                        Tabulate this.
+                      </div>
+                    ),
                   },
                   {
                     label: "Assist on feature prioritization",
@@ -222,6 +272,27 @@ const AdditionalOptions = ({
                         <input
                           type="text"
                           placeholder="Enter product name"
+                          style={{
+                            border: "2px solid #066a37",
+                            borderRadius: "5px",
+                            padding: "8px",
+                            outline: "none",
+                            fontSize: "12px",
+                            color: "black",
+                          }}
+                        />
+                        . Can you provide insights on effective methods or
+                        frameworks to prioritize features based on their impact,
+                        feasibility, and alignment with strategic goals?
+                      </div>
+                    ),
+                    disabledContent: (
+                      <div style={{ textAlign: "left" }}>
+                        I am a product manager building{" "}
+                        <input
+                          type="text"
+                          placeholder="Enter product name"
+                          disabled
                           style={{
                             border: "2px solid #066a37",
                             borderRadius: "5px",
